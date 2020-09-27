@@ -15,6 +15,22 @@ pipeline {
                 sh './gradlew test'
             }
         }
+        
+        
+        stage('Jococo Test Report') {
+                steps{
+                    echo 'Jacoco Running..'
+                    sh './gradlew jacocoTestReport'
+                }
+        }
+
+        stage('SonarQube analysis') {
+                    steps{
+                        echo 'SonarQube Analysis Running...'
+                        sh './gradlew sonarqube'
+                }
+        }
+        
         stage('Build Docker image') {
             steps {
                 sh './gradlew docker'
