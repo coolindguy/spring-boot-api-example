@@ -44,7 +44,7 @@ sonarqube {
         properties {
                 property "sonar.sourceEncoding", "UTF-8"
                 property "sonar.login", "a71adb0bde1c1971e5030ba9591bc7e859319643"
-                property "sonar.host.url","${ec2InstanceURL}:9000"
+                property "sonar.host.url","http://ec2-34-239-174-100.compute-1.amazonaws.com:9000"
                 property "sonar.projectName","jenkins-demo"
                 property "sonar.jacoco.reportPaths", "${buildDir}/jacoco/test.exec"
 
