@@ -39,12 +39,13 @@ test {
 
 String dockerHubUsernameProperty = findProperty('dockerHubUsername') ?: 'coolindguy'
 String imageName = "${dockerHubUsernameProperty}/spring-boot-api-example:$version"
+String sonarqubeURL = build.buildVariableResolver.resolve("sonarqubeURL");
 
 sonarqube {
         properties {
                 property "sonar.sourceEncoding", "UTF-8"
                 property "sonar.login", "a71adb0bde1c1971e5030ba9591bc7e859319643"
-                property "sonar.host.url","http://ec2-3-236-83-64.compute-1.amazonaws.com:9000"
+                property "sonar.host.url", sonarqubeURL
                 property "sonar.projectName","jenkins-demo"
                 property "sonar.jacoco.reportPaths", "${buildDir}/jacoco/test.exec"
 
