@@ -21,7 +21,7 @@ Resources:
     Properties:
       GroupName: ServiceSecurityGroup
       GroupDescription: Security group for service
-      VpcId: {'Fn::ImportValue': !Sub '${ParentVPCStack}-VPC'}
+      VpcId: !Ref VpcId
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 8080
