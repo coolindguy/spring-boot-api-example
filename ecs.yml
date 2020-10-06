@@ -1,5 +1,8 @@
 AWSTemplateFormatVersion: "2010-09-09"
 Parameters:
+  ParentVPCStack:
+    Description: 'Stack name of parent VPC stack based on vpc/vpc-*azs.yaml template.'
+    Type: String
   SubnetID:
     Type: String
   ServiceName:
@@ -18,6 +21,7 @@ Resources:
     Properties:
       GroupName: ServiceSecurityGroup
       GroupDescription: Security group for service
+      VpcId: {'Fn::ImportValue': !Sub '${ParentVPCStack}-VPC'}
       SecurityGroupIngress:
         - IpProtocol: tcp
           FromPort: 8080
