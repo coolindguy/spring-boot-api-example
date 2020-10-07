@@ -52,4 +52,4 @@ Resources:
           Subnets:
             - !Ref SubnetID
           SecurityGroups:
-            - !GetAtt ServiceSecurityGroup.GroupId
+            - sg-0ace976d33418bad7
