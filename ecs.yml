@@ -55,4 +55,5 @@ Resources:
           AssignPublicIp: ENABLED
           Subnets:
             - !Ref SubnetID
-          SecurityGroups: sg-0ace976d33418bad7
+          SecurityGroups: 
+            - sg-0ace976d33418bad7
